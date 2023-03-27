@@ -78,11 +78,17 @@ console.log(users.map(user => user.age)); // [30, 28, 25]
   return (
     <div className="App">
       <div className='editor'>
-        <header><i class="fa-brands fa-markdown"></i>Editor</header>
+        <header>
+          <i class="fa-brands fa-markdown"></i>
+          Editor
+          <i class="fa fa-arrows-alt"></i></header>
         <textarea />
       </div>
       <div className='preview'>
-        <header><i class="fa-brands fa-markdown"></i>Preview</header>
+        <header>
+          <i class="fa-brands fa-markdown"></i>
+          Preview
+          <i class="fa fa-arrows-alt"></i></header>
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             children={defaultText}

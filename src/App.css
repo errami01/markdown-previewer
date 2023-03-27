@@ -23,6 +23,8 @@ body{
 }
 header{
     background-color: var(--dark-color);
+    height: 40px;
+    font-family: 'Russo One';
 }
 textarea{
     width: 100%;

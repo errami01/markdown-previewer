@@ -10,7 +10,7 @@ function App() {
 ## This is a sub-heading...
 ### And here's some other cool stuff:
 ### KColjsdjf;aldjasdj
-Heres some code, \~ <div></div>\~, between 2 backticks.
+Heres some code, \` <div></div>\`, between 2 backticks.
 
 ~~~javascript
 // this is multi-line code:kj
@@ -65,14 +65,14 @@ function handleInputChange(event){
           <i class="fa-brands fa-markdown"></i>
           Editor
           <i class="fa fa-arrows-alt"></i></header>
-        <textarea onChange={handleInputChange}value={inputText}/>
+        <textarea onChange={handleInputChange}value={inputText} id="editor"/>
       </div>
-      <div className='preview'>
+      <div className='preview' >
         <header>
           <i class="fa-brands fa-markdown"></i>
           Preview
           <i class="fa fa-arrows-alt"></i></header>
-          <div className='prev-boy'>
+          <div className='prev-boy' id="preview">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             children={inputText}

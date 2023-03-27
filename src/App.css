@@ -2,21 +2,28 @@
     /* border: 0.5px solid; */
     box-sizing: border-box;
 }
+:root,#root{
+    height: 100%;
+}
 body{
     margin: 0;
     --light-color: #40b6bf;
     --dark-color: #339298;
+    height: 100%;
 }
+
 .App{
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: var(--light-color);
-    width: 100%
+    width: 100%;
+    min-height: 100%;
 }
 .editor{
     width: 60%;
     max-width: 600px;
+    min-height: 100px;
     height : fit-content;
     margin: 20px 0;
    
@@ -43,13 +50,19 @@ textarea{
     height: 250px;
     resize: vertical;
     box-shadow: 1px 1px 10px 2px ;
+    background-color: #71deec;
     
 }
 
 .preview{
     width: 80%;
     max-width: 800px;
+    min-height: 300px;
     box-shadow: 1px 1px 10px 2px ;
+    background-color: #71deec;
+    margin-bottom: 20px;
+    /* display: none; */
+    /* visibility: collapse; */
 
 }
 .prev-boy{
@@ -80,4 +93,7 @@ textarea{
     margin: 0;
     padding-left: 3em;
     border-left: 0.5em #eee solid;
+}
+code{
+    background-color: white;
 }

@@ -5,10 +5,8 @@ import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { useState } from 'react';
 function App() {
-  const [inputText, setInputText] = useState()
   const defaultText = `
-  # Welcome to my React Markdown Previewer!
-
+# Welcome to my React Markdown Previewer!
 ## This is a sub-heading...
 ### And here's some other cool stuff:
 ### KColjsdjf;aldjasdj
@@ -55,7 +53,11 @@ And here. | Okay. | I think we get it.
 ![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)
 
   `;
+  const [inputText, setInputText] = useState(defaultText)
 
+function handleInputChange(event){
+  setInputText(event.target.value)
+}
   return (
     <div className="App">
       <div className='editor'>
@@ -63,7 +65,7 @@ And here. | Okay. | I think we get it.
           <i class="fa-brands fa-markdown"></i>
           Editor
           <i class="fa fa-arrows-alt"></i></header>
-        <textarea />
+        <textarea onChange={handleInputChange}value={inputText}/>
       </div>
       <div className='preview'>
         <header>
@@ -73,7 +75,7 @@ And here. | Okay. | I think we get it.
           <div className='prev-boy'>
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
-            children={defaultText}
+            children={inputText}
             components={{
               code({ node, inline, className, children, ...props }) {
                 const match = /language-(\w+)/.exec(className || "");

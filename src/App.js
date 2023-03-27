@@ -77,28 +77,34 @@ console.log(users.map(user => user.age)); // [30, 28, 25]
 `;
   return (
     <div className="App">
-     <ReactMarkdown
-     remarkPlugins={[remarkGfm]}
-  children={defaultText}
-  components={{
-    code({ node, inline, className, children, ...props }) {
-      const match = /language-(\w+)/.exec(className || "");
-      return !inline && match ? (
-        <SyntaxHighlighter
-          children={String(children).replace(/\n$/, "")}
-          style={dark} // theme
-          language={match[1]}
-          PreTag='section' // parent tag
-          {...props}
-        />
-      ) : (
-        <code className={className} {...props}>
-          {children}
-        </code>
-      );
-    },
-  }}
-/>
+      <div className='editor'>
+        <header>Editor</header>
+        <textarea />
+      </div>
+      <div className='preview'>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            children={defaultText}
+            components={{
+              code({ node, inline, className, children, ...props }) {
+                const match = /language-(\w+)/.exec(className || "");
+                return !inline && match ? (
+                  <SyntaxHighlighter
+                    children={String(children).replace(/\n$/, "")}
+                    style={dark} // theme
+                    language={match[1]}
+                    PreTag='section' // parent tag
+                    {...props}
+                  />
+                ) : (
+                  <code className={className} {...props}>
+                    {children}
+                  </code>
+                );
+              },
+            }}
+          />
+</div>
     </div>
   );
 }

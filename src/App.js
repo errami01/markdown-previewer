@@ -89,6 +89,7 @@ console.log(users.map(user => user.age)); // [30, 28, 25]
           <i class="fa-brands fa-markdown"></i>
           Preview
           <i class="fa fa-arrows-alt"></i></header>
+          <div className='prev-body'>
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             children={defaultText}
@@ -110,7 +111,7 @@ console.log(users.map(user => user.age)); // [30, 28, 25]
                 );
               },
             }}
-          />
+          /></div>
 </div>
     </div>
   );

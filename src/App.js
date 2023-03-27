@@ -82,7 +82,7 @@ console.log(users.map(user => user.age)); // [30, 28, 25]
         <textarea />
       </div>
       <div className='preview'>
-        <header>Previ</header>
+        <header>Preview</header>
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             children={defaultText}

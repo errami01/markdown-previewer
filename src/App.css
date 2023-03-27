@@ -52,6 +52,9 @@ textarea{
     box-shadow: 1px 1px 10px 2px ;
 
 }
+.prev-boy{
+    padding: 10px;
+}
 .table-container{
     height: 400px;
     width: 400px;

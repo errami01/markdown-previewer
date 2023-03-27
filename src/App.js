@@ -3,9 +3,9 @@ import './App.css';
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
-
+import { useState } from 'react';
 function App() {
+  const [inputText, setInputText] = useState()
   const defaultText = `
   # Welcome to my React Markdown Previewer!
 
@@ -55,26 +55,7 @@ And here. | Okay. | I think we get it.
 ![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)
 
   `;
-  const javaScriptMarkdownCodeblock = `JavaScript code example:
- 
-~~~javascript
-// function that adds "2 numbers" together
-const sumTwoNumbers = (num1, num2) => num1 + num2;
- 
-// call the function
-console.log(sumTwoNumbers(1, 2)); // 3
- 
-// array of users
-const users = [
-  { name: "John", age: 30 },
-  { name: "Jane", age: 28 },
-  { name: "Bob", age: 25 },
-];
- 
-// print out the users age 
-console.log(users.map(user => user.age)); // [30, 28, 25]
-~~~
-`;
+
   return (
     <div className="App">
       <div className='editor'>
@@ -89,7 +70,7 @@ console.log(users.map(user => user.age)); // [30, 28, 25]
           <i class="fa-brands fa-markdown"></i>
           Preview
           <i class="fa fa-arrows-alt"></i></header>
-          <div className='prev-body'>
+          <div className='prev-boy'>
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             children={defaultText}
@@ -99,7 +80,7 @@ console.log(users.map(user => user.age)); // [30, 28, 25]
                 return !inline && match ? (
                   <SyntaxHighlighter
                     children={String(children).replace(/\n$/, "")}
-                    style={dark} // theme
+                    // theme
                     language={match[1]}
                     PreTag='section' // parent tag
                     {...props}
